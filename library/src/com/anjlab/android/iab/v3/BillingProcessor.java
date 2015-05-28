@@ -303,6 +303,7 @@ public class BillingProcessor extends BillingBase {
 		String purchasePayload = getPurchasePayload();
 		if (resultCode == Activity.RESULT_OK && responseCode == Constants.BILLING_RESPONSE_RESULT_OK && !TextUtils.isEmpty(purchasePayload)) {
 			String purchaseData = data.getStringExtra(Constants.INAPP_PURCHASE_DATA);
+			Log.d(LOG_TAG, "Purchase data: " + purchaseData);
 			String dataSignature = data.getStringExtra(Constants.RESPONSE_INAPP_SIGNATURE);
 			try {
 				JSONObject purchase = new JSONObject(purchaseData);
